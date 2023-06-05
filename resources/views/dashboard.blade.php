@@ -49,14 +49,10 @@
 
     </div>
     <!-- colunas de despesas -->
-    <div class="p-3">
-        <h2 class="text-2xl">
-            Despesas</h2>
-
             <div class="p-3">
         <h2 class="text-2xl">
 
-            Receitas</h2>
+        Despesas</h2>
 
         <div class="p-2 rounded-md bg-neutral-50 shadow-md">
             <p>05/06/2023</p>

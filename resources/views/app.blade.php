@@ -10,7 +10,7 @@
 <body>
 
   <main >
-      <div class="md:columns-2">
+      <div class="grid grid-cols-2 gap-4">
         <div class=" p-5 bg-cyan-500 h-full">
           Navegação
         
