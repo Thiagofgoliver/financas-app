@@ -7,7 +7,7 @@
 </h1>
 
 
-<div class="md:columns-2 divide-x divide-black divide-dashed">
+<div class="md:grid grid-cols-2">
     <!--colunas de receita  -->
     <div class="p-3">
         <h2 class="text-2xl">

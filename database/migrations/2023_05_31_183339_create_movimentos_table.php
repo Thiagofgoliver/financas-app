@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('movimentos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
 
             $table-> text('descricao');
             //campo 8 digitos e 2 casas decimais
@@ -31,7 +32,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('movimentos');
+        Schema::dropIfExists('movimentos', function (Blueprint $table){
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+        });
+        
     }
 
 

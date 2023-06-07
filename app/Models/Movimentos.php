@@ -8,5 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Movimentos extends Model
 {
     use HasFactory;
-    // inserir aqui relacionamentos de tabelas
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
 }

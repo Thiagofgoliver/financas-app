@@ -27,7 +27,6 @@ use Illuminate\Support\Facades\Route;
 
 
 });
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -36,4 +35,11 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/nova_entrada',function(){
+        return view('nova_entrada');
+    })->name('nova_entrada');
+   Route::post('/store',function(){
+    echo 'gravou';
+    })->name('store');
 });
