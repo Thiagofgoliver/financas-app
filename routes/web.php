@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MovimentoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,12 +35,11 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
-    })->name('dashboard');
+})->name('dashboard');
+Route::get('/dashboard',[MovimentoController::class,'read'])->name('dashboard');
 
     Route::get('/nova_entrada',function(){
         return view('nova_entrada');
     })->name('nova_entrada');
-   Route::post('/store',function(){
-    echo 'gravou';
-    })->name('store');
+   Route::post('/store',[MovimentoController::class,'store'])->name('store');
 });

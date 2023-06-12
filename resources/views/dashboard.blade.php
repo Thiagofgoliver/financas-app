@@ -14,7 +14,10 @@
 
             Receitas</h2>
 
-        <div class="p-2 rounded-md bg-neutral-50 shadow-md">
+
+        @foreach($receitas as $receita)
+
+        <div class="p-3 rounded-md bg-neutral-50 shadow-md">
             <p>05/06/2023</p>
 
             <p>Descrição do movimento <br>
@@ -46,6 +49,7 @@
 
 
         </div>
+        @endforeach
 
     </div>
     <!-- colunas de despesas -->
@@ -53,8 +57,10 @@
         <h2 class="text-2xl">
 
         Despesas</h2>
+        @foreach($despesas as $despesa)
 
-        <div class="p-2 rounded-md bg-neutral-50 shadow-md">
+
+        <div class="p-3 rounded-md bg-neutral-50 shadow-md">
             <p>05/06/2023</p>
 
             <p>Descrição do movimento <br>
@@ -87,6 +93,7 @@
 
         </div>
     </div>
+    @endforeach
 </div>
 
 @endsection
