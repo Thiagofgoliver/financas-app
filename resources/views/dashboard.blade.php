@@ -92,8 +92,9 @@
 
 
         </div>
+        @endforeach
     </div>
-    @endforeach
+   
 </div>
 
 @endsection
