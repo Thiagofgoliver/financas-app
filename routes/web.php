@@ -37,6 +37,8 @@ Route::middleware([
         return view('dashboard');
 })->name('dashboard');
 Route::get('/dashboard',[MovimentoController::class,'read'])->name('dashboard');
+// a rota abaixo recebe um parametro dinamico chamado "id"
+Route::get('/form_update/{id}',[MovimentoController::class,'form_update'])->name('form_update');
 
     Route::get('/nova_entrada',function(){
         return view('nova_entrada');
