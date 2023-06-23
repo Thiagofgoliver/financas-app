@@ -44,4 +44,6 @@ Route::get('/form_update/{id}',[MovimentoController::class,'form_update'])->name
         return view('nova_entrada');
     })->name('nova_entrada');
    Route::post('/store',[MovimentoController::class,'store'])->name('store');
+
+   Route::put('/update',[MovimentoController::class,'update'])->name('update');
 });

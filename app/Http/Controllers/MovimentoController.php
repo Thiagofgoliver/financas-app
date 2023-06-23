@@ -60,6 +60,19 @@ class MovimentoController extends Controller
     return view('form_update',['dado'=>$dado]);
     
   }
+  //u do crud update - atualiza dados
+  // pegar dados do formulario request
+  public function update(Request $request){
+
+   Movimento ::findOrfail($request->id)->update($request->all());
+
+   return redirect('dashboard');
+
+
+  }
+
+
+
 
 
 }

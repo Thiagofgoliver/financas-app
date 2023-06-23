@@ -5,9 +5,11 @@
     <h2 class="text-lg text-bold">
      Editar Movimento
     </h2>
-    <form id="frm-editar" method="post" action="">
+    <form id="frm-editar" method="post" action="{{route('update')}}">
         <!-- ponto importante proteção ante invasão sql injector -->
-        @csrf
+        @csrf 
+        @method('PUT')
+        <input type="hidden"name="id" value="{{$dado->id}}">
 
     <label for="descricao">
         Descrição
@@ -27,7 +29,9 @@
        <label for="valor">
         valor:
        </label><br>
-       <input  class="border" type="number" name="valor" step="0.01" required value="{{$dado->valor}}">
+       <input  class="border" type="number" name="valor" step="0.01"
+       
+        required value="{{number_format($dado->valor)}}">
     </p>
 
     <p class="mt-5">
