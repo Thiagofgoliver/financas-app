@@ -42,11 +42,19 @@ class MovimentoController extends Controller
     $despesas = Movimento::where('tipo','Despesa')->where('user_id', $user)->get();
     //carrega receitas
     $receitas = Movimento::where('tipo','Receita')->where('user_id', $user)->get();
+
+    $totDespesas = Movimento::where('tipo','Despesa')->where('user_id', $user)->sum('valor');
+
+    $totReceitas = Movimento::where('tipo','Receita')->where('user_id', $user)->sum('valor');
+
+
     // carrega a view passando os dados consultados
 
     $dados = [
         'despesas'=> $despesas,
         'receitas'=>$receitas,
+        'totDespesas' =>$totDespesas,
+         'totReceitas'=>$totReceitas,
 
 
     ];
@@ -67,6 +75,17 @@ class MovimentoController extends Controller
    Movimento ::findOrfail($request->id)->update($request->all());
 
    return redirect('dashboard');
+
+
+  }
+
+  //D do crud DELETE
+  public function deletar ($id){
+    
+
+    Movimento::findOrFail($id)->delete();
+    return redirect('dashboard');
+
 
 
   }

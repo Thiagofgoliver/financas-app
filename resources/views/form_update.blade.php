@@ -31,7 +31,7 @@
        </label><br>
        <input  class="border" type="number" name="valor" step="0.01"
        
-        required value="{{number_format($dado->valor)}}">
+        required value="{{$dado->valor}}">
     </p>
 
     <p class="mt-5">
